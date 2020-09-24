@@ -59,6 +59,15 @@ exports.default = _angular2.default.module('perfect_scrollbar', []).directive('p
                 }
             });
 
+            // Automatically update when container height changes
+            $scope.$watch(function () {
+                return $elem.height();
+            }, function (newValue, oldValue) {
+                if (newValue) {
+                    update('contentSizeChange');
+                }
+            });
+
             function update(event) {
                 $scope.$evalAsync(function () {
                     if ($attr.scrollDown == 'true' && event != 'mouseenter') {
