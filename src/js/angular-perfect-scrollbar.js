@@ -44,7 +44,8 @@ export default angular.module('perfect_scrollbar', [])
 
                     // Automatically update when content height changes
                     $scope.$watch(function () {
-                        return $elem.find('.scroll-transclude-content').height();
+                        const selector = $elem.find('.scroll-transclude-content');
+                        return selector.height() + '-' + selector.width() ;
                     }, function (newValue, oldValue) {
                         if (newValue) {
                             update('contentSizeChange');
@@ -53,7 +54,7 @@ export default angular.module('perfect_scrollbar', [])
 
                     // Automatically update when container height changes
                     $scope.$watch(function () {
-                        return $elem.height();
+                        return $elem.height() + '-' + $elem.width();
                     }, function (newValue, oldValue) {
                         if (newValue) {
                             update('contentSizeChange');
