@@ -91,6 +91,11 @@ export default angular.module('perfect_scrollbar', [])
                         jqWindow.on('resize', update);
                     }
 
+                    // use to force rendering refresh
+                    $scope.$on('refreshScrollbars', function () {
+                        update();
+                    });
+
                     $scope.$on('$destroy', function () {
                         jqWindow.off('resize', update);
                         ps.destroy($elem[0]);

@@ -99,6 +99,11 @@ exports.default = _angular2.default.module('perfect_scrollbar', []).directive('p
                 jqWindow.on('resize', update);
             }
 
+            // use to force rendering refresh
+            $scope.$on('refreshScrollbars', function () {
+                update();
+            });
+
             $scope.$on('$destroy', function () {
                 jqWindow.off('resize', update);
                 _perfectScrollbar2.default.destroy($elem[0]);

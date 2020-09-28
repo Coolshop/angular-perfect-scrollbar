@@ -1,7 +1,7 @@
 {
   "author": "coolshop",
   "name": "angularjs-perfect-scrollbar",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "This directive gives you a Bootstrap Dropdown with the power of AngularJS directives.",
   "homepage": "",
   "peerDependencies": {
